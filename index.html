@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Adaptiv Labs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <style>
+      .form-control,
+      .form-select {
+        border-color: #ff662e;
+        box-shadow: none;
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: none;
+        background-color: transparent !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="imgLogo" src="https://iili.io/jlKeRI.md.png" alt="adaptivlabs" width="200" class="d-inline-block p-1" />
+        </a>
+        <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler02" aria-controls="navbarToggler02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarToggler02">
+          <div class="d-flex">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 text-center">
+              <div class="nav" id="nav-tab" role="tablist"></div>
+            </ul>
+            <nav>
+              <div class="nav" id="nav-tab" role="tablist">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 text-center">
+                  <li class="nav-item">
+                    <a class="nav-link active text-danger" href="#" aria-current="page" aria-expanded="false" onclick="goHome()">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-danger" href="#aboutUs" aria-expanded="false" onclick="goHome()">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-danger" href="#contactUs" aria-expanded="false" onclick="goHome()">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-danger" aria-expanded="false" href="#product" onclick="goService()" role="button">Product</a>
+                  </li>
+                  <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser" class="btn btn-warning fw-bold text-white shadow-none" style="background-color:#ff662e; border-color:#ff662e;" id="navLoginBtn">Login</button>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- CONTENT-AREA -->
+    <!-- Home page -->
+      <div id="homePage">
+        <div class="container contenArea mb-0">
+          <!-- Carousel -->
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" id="carouselContent">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <!-- Card1 -->
+                <div class="card mt-3 mb-3 card1 rounded border-white">
+                  <div class="row g-0">
+                    <div class="col-md-6 p-3">
+                      <center>
+                        <img src="https://technext.github.io/productly/v1.0.0/assets/img/manager/manager.png" class="img-fluid rounded-start" alt="img1" width="350" />
+                      </center>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body mb-3" style="height:30rem">
+                        <h1 class="card-title fs-1"> Saatnya bisnis anda <br />GO Digital sekarang! </h1>
+                        <br />
+                        <h4 class="card-title mt-2"> Kami buatkan aplikasi atau website untuk instansi atau bisnismu </h4>
+                        <br />
+                        <div class="card d-inline-flex px-3 py-2 rounded text-primary fs-5 text-center"> Join sekarang dan dapatkan banyak benefit </div>
+                        <p class="mt-3 fs-5"> One stop service kebutuhan bisnis masa kini. </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //Card1 -->
+              </div>
+              <div class="carousel-item">
+                <!-- Card2 -->
+                <div class="card mt-3 mb-3 card3 rounded border-white">
+                  <div class="row gap-0">
+                    <div class="col-md-6 p-3">
+                      <center>
+                        <img src="https://technext.github.io/productly/v1.0.0/assets/img/hero/hero-img.png" class="img-fluid rounded-start" alt="img1" width="400" />
+                      </center>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body mb-3" style="height:30rem">
+                        <h1 class="card-title fs-1"> Pekerjaan jadi menyenangkan! </h1>
+                        <br />
+                        <h4 class="card-title mt-2"> Semakin percaya diri mengelola bisnis. </h4>
+                        <br />
+                        <div class="card d-inline-flex px-3 py-2 rounded text-success fs-5 text-center"> Aplikasi memudahkan kinerja perusahaan anda. </div>
+                        <p class="mt-3 fs-5">Bisa lebih fokus pada kemajuan bisnis anda.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //Card2 -->
+              </div>
+              <div class="carousel-item">
+                <!-- Card3 -->
+                <div class="card mt-3 mb-3 card3 rounded border-white">
+                  <div class="row g-0">
+                    <div class="col-md-6 p-3">
+                      <center>
+                        <img src="https://technext.github.io/productly/v1.0.0/assets/img/validation/validation.png" class="img-fluid rounded-start" alt="img1" width="325" />
+                      </center>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body mb-3" style="height:30rem">
+                        <h1 class="card-title fs-1"> Bisnis autopilot & realtime </h1>
+                        <br />
+                        <h4 class="card-title mt-2"> Jalankan bisnis darimana saja kapan saja. </h4>
+                        <br />
+                        <div class="card d-inline-flex px-3 py-2 rounded text-danger fs-5 text-center"> Pantau bisnis bisa kapan saja dan dimana saja </div>
+                        <p class="mt-3 fs-5">Anda semakin banyak waktu <br>dan bisnis berjalan lancar. </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //Card3 -->
+              </div>
+            </div>
+          </div>
+          <!-- //Carousel -->
+        </div>
+        <include src="html/about.html"></include>
+      </div>			
+    <!-- Home pae ends -->
+		
+		<include src="html/product.html"></include>
+    <include src="html/user.html"></include>    
+		<include src="html/modal-ims.html"></include>
+		<include src="html/modal-hrsys.html"></include>
+		<include src="html/modal-finsapp.html"></include>
+		<include src="html/modal-frontcash.html"></include>
+    <footer>
+      <center>
+        <img src="https://iili.io/jlKeRI.md.png" class="img-fluid mx-auto p-3 mb-0" alt="logo" width="250" />
+        <div class="text-center fs-5 mt-0 mb-2">Apps & Webs developer</div>
+        <small class="copyright"> © 2022 Copyright by <a href="#">AdaptivLabs</a>. All Rights Reserved. </small>
+      </center>
+    </footer>
+    <br>
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/global.js"></script>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/user.js"></script>
+  </body>
+</html>

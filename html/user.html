@@ -1,0 +1,164 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-danger" id="offcanvasUserLabel">User account</h5>
+    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- User Account Tab -->
+    <div class="container d-none" id="navUserInfo">
+      <nav class="nav nav-bar sticky-top mt-0 bg-white">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-payment-tab" data-bs-toggle="tab" data-bs-target="#nav-payment" type="button" role="tab" aria-controls="nav-payment" aria-selected="true"> Profile </button>
+          <button class="nav-link" id="nav-transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-transaction" type="button" role="tab" aria-controls="nav-transaction" aria-selected="false"> Transaction </button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> Payment </button>
+        </div>
+      </nav>
+      <div class="tab-content container mt-3" id="nav-tabContent">
+        <!-- profile starts -->
+        <div class="tab-pane fade show active" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab" tabindex="0">
+          <h4 class="text-end mb-3" id="usernameSpan"></h4>
+          <center>
+            <div class="form-floating mb-2">
+              <input type="email" class="form-control shadow-none bg-light border-light fs-6" disabled id="userinfoId" placeholder="name@example.com">
+              <label for="userinfoId">User ID</label>
+            </div>
+            <div class="form-floating mb-2">
+              <input type="email" class="form-control shadow-none bg-light border-light fs-6" disabled id="userinfoEmail" placeholder="name@example.com">
+              <label class="text-end" for="userinfoEmail">Email</label>
+            </div>
+            <div class="form-floating mb-2">
+              <input type="text" class="form-control shadow-none bg-light border-light fs-6" disabled id="userinfoPhone" placeholder="name@example.com">
+              <label class="text-end" for="userinfoPhone">Phone/WA</label>
+            </div>
+            <div class="form-floating mb-2">
+              <input type="password" class="form-control shadow-none bg-light border-light fs-6" disabled id="userinfoPass" placeholder="name@example.com">
+              <label class="text-end" for="userinfoPass">Password</label>
+            </div>
+            <div class="form-floating mb-2 d-none">
+              <input type="password" class="form-control shadow-none bg-light border-light fs-6" disabled id="userinfoPass2" placeholder="name@example.com">
+              <label class="text-end" for="userinfoPass2">Repeat Password</label>
+            </div>
+            <div class="d-grid gap-2 mt-3 mx-auto d-md-block">
+              <button class="btn btn-outline-secondary shadow-none" type="button">Edit Info</button>
+              <button class="btn btn-outline-danger shadow-none" type="button" onclick="logOutUser()">Log Out</button>
+            </div>
+          </center>
+        </div>
+        <!-- profile ends -->
+        <!-- trx tab starts -->
+        <div class="tab-pane fade" id="nav-transaction" role="tabpanel" aria-labelledby="nav-transaction-tab" tabindex="1">
+          <h4 class="text-end mb-3">Transaksi Anda</h4>
+          <div id="trxDiv"></div>
+        </div>
+        <!-- trx tab ends -->
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="2">
+          <h4 class="text-end mb-3">Pembayaran</h4>
+        </div>
+      </div>
+    </div>
+    <!-- User Account Tab ends -->
+    <!-- Accordion Login -->
+    <div class="accordion" id="accordionUserLogin">
+      <div class="accordion-item">
+        <h2 class="accordion-header shadow-none" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogin" aria-expanded="true" aria-controls="collapseLogin"> Login akun </button>
+        </h2>
+        <div id="collapseLogin" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionUserLogin">
+          <div class="accordion-body">
+            <br>
+            <!-- Login Form -->
+            <div id="loginForm">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control shadow-none" id="loginId" placeholder="User Login" />
+                <label for="loginEmail">User ID</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control shadow-none" id="loginPass" placeholder="Password" />
+                <label for="loginPass">Password</label>
+              </div>
+              <div class="text-center mt-2">
+                <span id="loginNotif" class="text-danger"></span>
+              </div>
+              <div class="d-grid justify-content-md-end">
+                <button class="
+                    d-grid
+                    btn btn-primary
+                    me-md-2
+                    mt-3
+                    text-white
+                    fw-bold
+                    shadow-none
+                  " type="button" style="background-color: #ff662e; border-color: #ff662e" onclick="loginClick()" id="loginBtn"> Submit </button>
+              </div>
+            </div>
+            <!-- Login Form ends -->
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header shadow-none" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNewUser" aria-expanded="false" aria-controls="collapseNewUser"> Buat akun baru? </button>
+        </h2>
+        <div id="collapseNewUser" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionUserLogin">
+          <div class="accordion-body">
+            <br>
+            <!-- Sign up Form -->
+            <div id="signUpForm">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control shadow-none" id="signupEmail" placeholder="name@example.com" />
+                <label for="signupEmail">Password</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control shadow-none" id="signUpPhone" placeholder="Phone" />
+                <label for="signUpPhone">Phone/Whatsapp</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control shadow-none" id="signUpUsername" placeholder="Username" />
+                <label for="signUpUsername">Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control shadow-none" id="signUpPass1" placeholder="Password" />
+                <label for="signUpPass1">Password</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control shadow-none" id="signUpPass2" placeholder="Password" />
+                <label for="signUpPass2">Repeat Password</label>
+              </div>
+              <div class="d-grid justify-content-md-end">
+                <button class="
+                    d-grid
+                    btn btn-primary
+                    me-md-2
+                    text-white
+                    fw-bold
+                    shadow-none
+                  " type="button" style="background-color: #ff662e; border-color: #ff662e"> Submit </button>
+              </div>
+            </div>
+            <!-- Sign up Form ends -->
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header shadow-none" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseForgot" aria-expanded="false" aria-controls="collapseForgot"> Lupa Password? </button>
+        </h2>
+        <div id="collapseForgot" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionUserLogin">
+          <div class="accordion-body">
+            <br>
+            <!-- Forgot Form -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control shadow-none" id="emailForget" placeholder="EmailForget" />
+              <label for="emailForget">Email yang terdaftar</label>
+            </div>
+            <div class="d-grid justify-content-md-end">
+              <button class="d-grid btn btn-primary me-md-2 text-white fw-bold shadow-none" type="button" style="background-color: #ff662e; border-color: #ff662e"> Send Submition </button>
+              <!-- Forgot Form ends -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Accordion Login ends -->
+</div>
